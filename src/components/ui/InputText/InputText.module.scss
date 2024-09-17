@@ -1,0 +1,65 @@
+.input {
+  input {
+    background-color: yellow;
+    border: none;
+    outline: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  
+    padding: 0 10px;
+    height: 20px;
+
+    &.invalid {
+      animation: ToInvalidInput .1s forwards;
+    }
+
+    &.valid {
+      animation: ToValidInput .1s forwards;
+    }
+  }
+
+  button {
+    background-color: yellow;
+    border: none;
+    width: 20px;
+    height: 20px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    
+    &.invalid {
+      text-indent: -999999px;
+      cursor: text;
+      animation: HideButton .1s forwards;
+    }
+
+    &.valid {
+      animation: ShowButton .1s forwards;
+    }
+  }
+}
+
+@keyframes ShowButton {
+  to {
+    border-radius: 5px;
+    margin-left: 5px;
+  }
+}
+
+@keyframes HideButton {
+  from {
+    border-radius: 5px;
+    margin-left: 5px;
+  }
+}
+
+@keyframes ToValidInput {
+  to {
+    border-radius: 5px;
+  }
+}
+
+@keyframes ToInvalidInput {
+  from {
+    border-radius: 5px;
+  }
+}

@@ -1,0 +1,53 @@
+// Основные стили для контейнера чекбокса
+.checkbox {
+  display: inline-block;
+  position: relative;
+  width: 16px; // Диаметр чекбокса
+  height: 16px; // Диаметр чекбокса
+  cursor: pointer;
+  
+  // Стили для скрытого чекбокса
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+  }
+
+  // Стили для кастомного чекбокса
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid white; // Белый бордер
+    border-radius: 50%; // Круглая форма
+    background-color: transparent; // Прозрачный фон
+    transition: background-color 0.3s;
+  }
+
+  // Стили для активного состояния чекбокса
+  input:checked + .checkmark {
+    background-color: transparent; // Фон при активации
+  }
+
+  // Стили для галочки
+  .checkmark::after {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+  }
+
+  // Показ галочки, когда чекбокс активен
+  input:checked + .checkmark::after {
+    display: block;
+  }
+}

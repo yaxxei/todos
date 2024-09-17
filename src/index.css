@@ -1,0 +1,31 @@
+:root {
+  --bg-color: #181818;
+  --bg-color-light: #252529;
+  --active-color: #715AFF;
+  --error-color: #FF0000;
+  --ok-color: #00ff00;
+  --tile-height: 50px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #252529;
+
+  font-family: "Lexend", system-ui;
+  color: #fff;
+}
+
+button {
+  cursor: pointer;
+  color: #fff;
+  outline: none;
+}
+
+input {
+  font-family: 'Lexend', system-ui;
+}

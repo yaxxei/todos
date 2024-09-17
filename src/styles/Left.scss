@@ -1,0 +1,122 @@
+#left {
+  width: 500px;
+  background-color: #18181A;
+  display: flex;
+  flex-direction: column;
+
+  .adder {
+    position: relative;
+
+    input {
+      width: 100%;
+      height: var(--tile-height);
+      border: none;
+      outline: none;
+      padding: 0 10px;
+      background-color: #1E1E21;
+      margin-bottom: 2px;
+      color: #fff;
+      font-size: 20px;
+
+      &.valid {
+        padding-right: 40px;
+      }
+    }
+
+    button {
+      background-color: transparent;
+      position: absolute;
+      top: 0;
+      right: 10px;
+      bottom: 0;
+      border: none;
+      cursor: pointer;
+
+      &.invalid {
+        animation: HideButton .2s forwards;
+      }
+      
+      &.valid {
+        animation: ShowButton .2s forwards;
+      }
+    }
+
+    @keyframes ShowButton {
+      from {
+        right: -20px;
+        opacity: 0;
+        pointer-events: none;
+      }
+      to {
+        right: 10px;
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+
+    @keyframes HideButton {
+      from {
+        right: 10px;
+        opacity: 1;
+        pointer-events: auto;
+      }
+      to {
+        right: -20px;
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+  }
+
+  .todos {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    
+    button {
+      background-color: #1E1E21;
+      color: #fff;
+      border: none;
+      text-align: left;
+
+      & > * {
+        font-family: "Lexend", system-ui;
+        font-size: 16px;
+        font-weight: 500;
+
+        padding-left: 25px;
+      }
+    }
+
+    .img-wrapper {
+      background-color: #1E1E21;
+      padding: 0 25px;
+      position: relative;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      &::after {
+        content: "";
+        width: 2px;
+        height: 100%;
+        background-color: var(--bg-color);
+        position: absolute;
+        top: 0;
+        right: 0;;
+      }
+    }
+    
+    & > * {
+      display: flex;
+      flex-direction: row;
+      
+      height: var(--tile-height);
+
+      & > *:not(:first-child) {
+        width: 100%;
+      }
+    }
+  }
+}
